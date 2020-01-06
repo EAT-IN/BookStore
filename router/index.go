@@ -2,6 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
+	"html/template"
 )
 
 func Index(c *gin.Context) {
@@ -20,4 +21,19 @@ func Regist(c *gin.Context) {
 	// 注册页面
 	c.HTML(200, "regist.html", nil)
 
+}
+
+// 渲染模版样例
+func Test(c *gin.Context) {
+	data := `<table border="1">
+		<tr>
+			<td>row 1, cell 1</td>
+			<td>row 1, cell 2</td>
+		</tr>
+		<tr>
+			<td>row 2, cell 1</td>
+			<td>row 2, cell 2</td>
+		</tr>
+	</table>`
+	c.HTML(200, "demo.html", template.HTML(data))
 }

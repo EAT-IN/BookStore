@@ -1,7 +1,7 @@
 package model
 
 import (
-	hash "BookStore/utils"
+	"BookStore/utils"
 	"errors"
 	"time"
 )
@@ -22,7 +22,7 @@ func CheckUserNameAndPassword(username, password string) (*User, error) {
 	if user.ID == 0 {
 		return nil, errors.New("用户不存在")
 	} else {
-		err = hash.ValidatePassword(password, user.Password)
+		err = utils.ValidatePassword(password, user.Password)
 		if err != nil {
 			return nil, errors.New("密码错误")
 		} else {
@@ -49,7 +49,7 @@ func CheckUserName(username string) bool {
 func SaveUser(username, password, email string) error {
 	if CheckUserName(username) {
 		// 进行密码加密
-		passStr, _ := hash.GeneratePassword(password)
+		passStr, _ := utils.GeneratePassword(password)
 
 		user := &User{
 			Username: username,

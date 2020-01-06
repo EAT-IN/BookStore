@@ -3,6 +3,7 @@ package main
 import (
 	"BookStore/model"
 	"BookStore/router"
+	"fmt"
 )
 
 func main() {
@@ -11,6 +12,8 @@ func main() {
 	// 初始化路由设置
 	r := router.InitRouter()
 	// 启动服务器
-	r.Run()
+	if err := r.Run(); err != nil {
+		fmt.Println(err.Error())
+	}
 
 }
