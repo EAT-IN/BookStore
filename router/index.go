@@ -26,14 +26,14 @@ func Regist(c *gin.Context) {
 // 渲染模版样例
 func Test(c *gin.Context) {
 	data := `<table border="1">
-		<tr>
-			<td>row 1, cell 1</td>
-			<td>row 1, cell 2</td>
-		</tr>
-		<tr>
-			<td>row 2, cell 1</td>
-			<td>row 2, cell 2</td>
-		</tr>
-	</table>`
+			<tr>
+				<td>row 1, cell 1</td>
+				<td>row 1, cell 2</td>
+			</tr>
+			<tr>
+				<td>row 2, cell 1</td>
+				<td>row 2, cell 2</td>
+			</tr>
+			</table>`
 	c.HTML(200, "demo.html", template.HTML(data))
 }

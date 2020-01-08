@@ -11,8 +11,8 @@ type User struct {
 	Username   string    `gorm:"type:varchar(100);NOT NULL;unique_index:uqi"`
 	Password   string    `gorm:"type:varchar(100);NOT NULL"`
 	Email      string    `gorm:"type:varchar(100);NOT NULL;index:idx"`
-	CreateTime time.Time `gorm:"type:datetime;NOT NULL;DEFAULT:CURRENT_TIMESTAMP"`
-	UpdateTime time.Time `gorm:"type:datetime;NOT NULL;DEFAULT:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"`
+	CreateTime time.Time `gorm:"type:timestamp;NOT NULL;DEFAULT:CURRENT_TIMESTAMP"`
+	UpdateTime time.Time `gorm:"type:timestamp;NOT NULL;DEFAULT:CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"`
 }
 
 // 根据用户名和密码查询用户
