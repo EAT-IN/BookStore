@@ -24,6 +24,6 @@ func InitDB() {
 	// 设置最大连接数
 	DB.DB().SetMaxOpenConns(10)
 	// 自动建表
-	DB.AutoMigrate(&User{}) // 自动创建表
+	DB.AutoMigrate(&User{}, &Book{}) // 自动创建表
 
 }

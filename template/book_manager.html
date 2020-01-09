@@ -11,7 +11,6 @@
 			<img class="logo_img" alt="" src="/static/img/logo.gif" >
 			<span class="wel_word">图书管理系统</span>
 			<div>
-				<a href="/pages/manager/book_manager.html">图书管理</a>
 				<a href="/">返回商城</a>
 			</div>
 	</div>
@@ -25,46 +24,18 @@
 				<td>销量</td>
 				<td>库存</td>
 				<td colspan="2">操作</td>
-			</tr>		
-			<tr>
-				<td>时间简史</td>
-				<td>20.00</td>
-				<td>霍金</td>
-				<td>200</td>
-				<td>400</td>
-				<td><a href="/pages/manager/book_edit.html">修改</a></td>
-				<td><a href="#">删除</a></td>
-			</tr>	
-			
-			<tr>
-				<td>时间简史</td>
-				<td>20.00</td>
-				<td>霍金</td>
-				<td>200</td>
-				<td>400</td>
-				<td><a href="book_edit.html">修改</a></td>
-				<td><a href="#">删除</a></td>
-			</tr>	
-			
-			<tr>
-				<td>时间简史</td>
-				<td>20.00</td>
-				<td>霍金</td>
-				<td>200</td>
-				<td>400</td>
-				<td><a href="book_edit.html">修改</a></td>
-				<td><a href="#">删除</a></td>
-			</tr>	
-			
-			<tr>
-				<td>时间简史</td>
-				<td>20.00</td>
-				<td>霍金</td>
-				<td>200</td>
-				<td>400</td>
-				<td><a href="book_edit.html">修改</a></td>
-				<td><a href="#">删除</a></td>
-			</tr>	
+			</tr>
+			{{ range . }}
+				<tr>
+					<td>{{ .Title }}</td>
+					<td>{{ .Price }}</td>
+					<td>{{ .Author }}</td>
+					<td>{{ .Sales }}</td>
+					<td>{{ .Stock }}</td>
+					<td><a href="/pages/manager/book_edit.html">修改</a></td>
+					<td><a href="#">删除</a></td>
+				</tr>
+			{{ end }}
 			
 			<tr>
 				<td></td>

@@ -23,6 +23,12 @@ func Regist(c *gin.Context) {
 
 }
 
+func Manager(c *gin.Context) {
+	//后台管理页面
+	c.HTML(200, "manager.html", nil)
+
+}
+
 // 渲染模版样例
 func Test(c *gin.Context) {
 	data := `<table border="1">
