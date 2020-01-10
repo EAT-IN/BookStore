@@ -22,3 +22,22 @@ func GetBooks() []*Book {
 	return books
 
 }
+
+func AddBook(title string, author string, price float64, sales int, stock int, imgPath string) error {
+
+	book := Book{
+		Title:   title,
+		Author:  author,
+		Price:   price,
+		Sales:   sales,
+		Stock:   stock,
+		ImgPath: imgPath,
+	}
+	err := DB.Create(&book).Error
+	if err != nil {
+		return err
+	} else {
+		return nil
+	}
+
+}

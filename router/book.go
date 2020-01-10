@@ -2,14 +2,21 @@ package router
 
 import (
 	"BookStore/model"
-	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/unknwon/com"
 )
 
-func BookManager(c *gin.Context) {
-	// 图书管理页面
-	books := model.GetBooks()
-	fmt.Println(books)
-	c.HTML(200, "book_manager.html", books)
+func BookAddBook(c *gin.Context) {
+	title := c.PostForm("title")
+	price, _ := com.StrTo(c.PostForm("price")).Float64()
+	author := c.PostForm("author")
+	sales, _ := com.StrTo(c.PostForm("sales")).Int()
+	stock, _ := com.StrTo(c.PostForm("stock")).Int()
+	imgPath := "/static/img/default.jpg"
+	err := model.AddBook(title, author, price, sales, stock, imgPath)
+	if err != nil {
+		c.Abort()
+	} else {
 
+	}
 }
