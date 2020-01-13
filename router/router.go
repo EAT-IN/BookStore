@@ -21,7 +21,7 @@ func InitRouter() *gin.Engine {
 	r.GET("/manager", Manager)
 	r.GET("/book/manager", BookManager)
 	r.GET("/book/edit", BookEdit)
-	r.GET("/book/addbook", BookAddBook)
+	r.POST("/book/addbook", BookAddBook)
 
 	return r
 
