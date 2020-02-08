@@ -12,7 +12,7 @@ func BookAddBook(c *gin.Context) {
 	author := c.PostForm("author")
 	sales, _ := com.StrTo(c.PostForm("sales")).Int()
 	stock, _ := com.StrTo(c.PostForm("stock")).Int()
-	imgPath := "/static/img/default.jpg"
+	imgPath := "static/img/default.jpg"
 	_ = model.AddBook(title, author, price, sales, stock, imgPath)
 	c.Redirect(301, "/book/manager")
 }
